@@ -15,5 +15,15 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Services
         {
             return _departementRepository.AddDepartement(DepartementName);
         }
+
+        public string RemoveDepartement(int id)
+        {
+            return  _departementRepository.RemoveDepartement(id);
+        }
+
+        public Departement updateDepartmentById(Departement departement, int idDep)
+        {
+            return _departementRepository.UpdateDepartementById(departement, idDep);    
+        }
     }
 }

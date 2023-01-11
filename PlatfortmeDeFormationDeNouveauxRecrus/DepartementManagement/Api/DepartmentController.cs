@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities;
 using PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Services;
 
 namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Api
@@ -20,11 +20,25 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Api
         [Route("AddDepartement")]
         public IActionResult AddDepartement(string DepartementName)
         {
-
-
-
             return Ok(_departmentService.AddDepartement(DepartementName));
         }
 
+        [HttpPut]
+        [Route("UpdateDepartmentById")]
+
+        public IActionResult UpdateDepartementById([FromBody] Departement department, int id)
+        {
+            return Ok(_departmentService.updateDepartmentById(department, id));
+        }
+        [HttpDelete]
+        [Route("DeleteById")]
+
+        public IActionResult RemoveDepartment(int id)
+        {
+            return Ok(_departmentService.RemoveDepartement(id));
+
+
         }
     }
+}
+

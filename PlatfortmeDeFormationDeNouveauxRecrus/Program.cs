@@ -14,7 +14,8 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers(
+options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 
 
 builder.Services.AddDbContext<DataBaseContext>(

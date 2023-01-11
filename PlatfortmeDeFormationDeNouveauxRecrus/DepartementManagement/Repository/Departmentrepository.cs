@@ -23,16 +23,8 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Repository
             return dbDepartement;
         }
 
-        public Departement GetCurrentDepartement()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Departement GetCurrentUser()
-        {
-            throw new NotImplementedException();
-        }
-
+     
+     
         public Departement GetDepartementById(int id)
         {
             throw new NotImplementedException();
@@ -43,10 +35,23 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Repository
             throw new NotImplementedException();
         }
 
-        public Departement UpdateDepartement(Departement departement)
-        {
-            throw new NotImplementedException();
-        }
+      
 
+        public Departement UpdateDepartementById(Departement departement, int DepId)
+        {
+
+            Departement updtDep = dataBase.Departements.Where(d => d.Departement_id == DepId).FirstOrDefault() ;
+            updtDep.DepartementName = departement.DepartementName ;
+            dataBase.Departements.Update(updtDep);
+            dataBase.SaveChanges();
+            return updtDep;
+        }
+        public string RemoveDepartement(int id)
+        {
+            Departement delDep = dataBase.Departements.Where(d => d.Departement_id == id).FirstOrDefault();
+            dataBase.Departements.Remove(delDep);
+            dataBase.SaveChanges();
+            return "deleted successfully";
+        }
     }
 }

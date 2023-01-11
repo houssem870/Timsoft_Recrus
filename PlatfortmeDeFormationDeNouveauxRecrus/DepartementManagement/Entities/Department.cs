@@ -13,6 +13,7 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities
         public int Departement_id { get; set; }
         public string DepartementName { get; set; }
 
+        [NotMapped]
         [JsonIgnore]
         public List<User> Users { get; set; }
 

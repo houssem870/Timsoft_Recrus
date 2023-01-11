@@ -4,10 +4,9 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Repository
 {
     public interface IDepartmentRepository
     {
-        Departement GetCurrentDepartement();
         public Departement AddDepartement(string DepartementName);
-        public Departement UpdateDepartement(Departement departement);
-        public Departement RemoveDepartement(Departement departement);
+        public Departement UpdateDepartementById(Departement departement ,int DepId);
+        public string RemoveDepartement(int id);
         public Departement GetDepartementById(int id);
     }
 }
