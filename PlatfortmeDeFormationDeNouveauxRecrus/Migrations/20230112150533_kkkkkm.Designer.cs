@@ -11,8 +11,8 @@ using PlatfortmeDeFormationDeNouveauxRecrus.DataBase;
 namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20230111120058_firstMig")]
-    partial class firstMig
+    [Migration("20230112150533_kkkkkm")]
+    partial class kkkkkm
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,18 +56,23 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("ProjectIdProject")
+                        .HasColumnType("integer");
+
                     b.HasKey("Document_id");
+
+                    b.HasIndex("ProjectIdProject");
 
                     b.ToTable("Documents");
                 });
 
             modelBuilder.Entity("PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities.Project", b =>
                 {
-                    b.Property<long>("IdProject")
+                    b.Property<int>("IdProject")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("IdProject"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdProject"));
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
@@ -160,6 +165,17 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
                     b.ToTable("RoleUser");
                 });
 
+            modelBuilder.Entity("PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities.Document", b =>
+                {
+                    b.HasOne("PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities.Project", "Project")
+                        .WithMany("Documents")
+                        .HasForeignKey("ProjectIdProject")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
             modelBuilder.Entity("PlatfortmeDeFormationDeNouveauxRecrus.UserManagement.Entities.User", b =>
                 {
                     b.HasOne("PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities.Departement", "Departement")
@@ -189,6 +205,11 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
             modelBuilder.Entity("PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities.Departement", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities.Project", b =>
+                {
+                    b.Navigation("Documents");
                 });
 #pragma warning restore 612, 618
         }

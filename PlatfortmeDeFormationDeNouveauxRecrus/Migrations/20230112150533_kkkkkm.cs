@@ -4,7 +4,7 @@
 
 namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
 {
-    public partial class houssem : Migration
+    public partial class kkkkkm : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -53,6 +53,9 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DataBase
 
             modelBuilder.Entity<User>().HasMany<Role>(s => s.Roles).WithMany(r => r.Users);
             modelBuilder.Entity<Departement>().HasMany(u => u.Users).WithOne(e => e.Departement);
+            modelBuilder.Entity<Project>().HasMany(p => p.Documents).WithOne(d => d.Project).IsRequired(false);
+
+
         }
 
 

@@ -5,7 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
 {
-    public partial class first : Migration
+    public partial class h : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -23,17 +23,16 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Documents",
+                name: "Projects",
                 columns: table => new
                 {
-                    Document_id = table.Column<int>(type: "integer", nullable: false)
+                    IdProject = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Description = table.Column<string>(type: "text", nullable: false),
-                    PieceJointe = table.Column<string>(type: "text", nullable: false)
+                    Description = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Documents", x => x.Document_id);
+                    table.PrimaryKey("PK_Projects", x => x.IdProject);
                 });
 
             migrationBuilder.CreateTable(
@@ -73,6 +72,27 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Documents",
+                columns: table => new
+                {
+                    Document_id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    PieceJointe = table.Column<string>(type: "text", nullable: false),
+                    ProjectIdProject = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Documents", x => x.Document_id);
+                    table.ForeignKey(
+                        name: "FK_Documents_Projects_ProjectIdProject",
+                        column: x => x.ProjectIdProject,
+                        principalTable: "Projects",
+                        principalColumn: "IdProject",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "RoleUser",
                 columns: table => new
                 {
@@ -108,6 +128,11 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Documents_ProjectIdProject",
+                table: "Documents",
+                column: "ProjectIdProject");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_RoleUser_UsersUser_id",
                 table: "RoleUser",
                 column: "UsersUser_id");
@@ -125,6 +150,9 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.Migrations
 
             migrationBuilder.DropTable(
                 name: "RoleUser");
+
+            migrationBuilder.DropTable(
+                name: "Projects");
 
             migrationBuilder.DropTable(
                 name: "Roles");

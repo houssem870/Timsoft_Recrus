@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities;
 using PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities.DTO;
 using PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Services;
 
@@ -27,6 +28,17 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Api
             return Ok(_documentService.AddDocument(document));
 
         }
+        [HttpDelete]
+        [Route("DeleteDocumentById")]
+
+        public IActionResult RemoveDocument(int id)
+        {
+            return Ok(_documentService.RemoveDocument(id));
+
+
+        }
+
+
 
 
 

@@ -66,8 +66,5 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.UserManagement.Api
         }
 
 
-
-
-
     }
 }

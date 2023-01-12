@@ -27,24 +27,20 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Repository
         }
 
 
-
-        public Document GetCurrentDocumentt()
-        {
-            throw new NotImplementedException();
-        }
-
         public Document GetDocumenttById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Document RemoveDocument(Document document
-)
+     
+
+        public string RemoveDocument(int id)
         {
-            throw new NotImplementedException();
+            Document doc = dataBase.Documents.Where(d => d.Document_id == id).FirstOrDefault();
+            dataBase.Documents.Remove(doc);
+            dataBase.SaveChanges();
+            return "Document deleted ";
         }
-
-
 
         public Document UpdateDocument(Document document)
         {

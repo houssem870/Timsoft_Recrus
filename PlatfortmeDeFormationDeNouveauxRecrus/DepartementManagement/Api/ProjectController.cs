@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities;
 using PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Services;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Api
 {
@@ -21,6 +24,7 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Api
         {
             return Ok(projectService.AddProject(Description));
         }
+      
 
     }
 }

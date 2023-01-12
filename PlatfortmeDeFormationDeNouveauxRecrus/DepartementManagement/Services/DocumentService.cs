@@ -16,6 +16,10 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Services
         {
             return _documentRepository.AddDocument(document);
         }
+        public string RemoveDocument(int id)
+        {
+            return _documentRepository.RemoveDocument(id);
+        }
 
     }
 }

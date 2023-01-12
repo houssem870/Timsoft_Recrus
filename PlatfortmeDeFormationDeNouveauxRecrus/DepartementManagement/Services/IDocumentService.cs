@@ -6,5 +6,6 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Services
     public interface IDocumentService
     {
         public Document AddDocument(DocumentDTO document);
+        public string RemoveDocument(int id);
     }
 }
