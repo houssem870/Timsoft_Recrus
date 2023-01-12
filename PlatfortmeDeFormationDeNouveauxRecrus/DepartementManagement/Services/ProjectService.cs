@@ -16,14 +16,14 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Services
             return projectRepository.AddProject(description);
         }
 
-     /*   public Task<string> RemoveProject(long IdProject)
-        {
-            throw new NotImplementedException();
+           public Project RemoveProject(long IdProject)
+           {
+            return projectRepository.RemoveProject(IdProject);
         }
 
-        public Task<string> UpdateProject(long IdProject, string Description)
+        public Project UpdateProject(long IdProject, string Description)
         {
-            throw new NotImplementedException();
-        }*/
+            return projectRepository.UpdateProject(IdProject,Description);
+        }
     }
 }

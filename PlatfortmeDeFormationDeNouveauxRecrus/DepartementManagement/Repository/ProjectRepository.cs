@@ -1,4 +1,5 @@
-﻿using PlatfortmeDeFormationDeNouveauxRecrus.DataBase;
+﻿using Microsoft.AspNetCore.Mvc;
+using PlatfortmeDeFormationDeNouveauxRecrus.DataBase;
 using PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Entities;
 
 namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Repository
@@ -21,27 +22,34 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Repository
         }
 
 
-       /* public async Task<string> RemoveProject(long IdProject)
+       public Project RemoveProject(long IdProject)
         {
-            var proj = await dataBase.Projects.FindAsync(IdProject);
+            var proj = dataBase.Projects.Where(p => p.IdProject == IdProject).FirstOrDefault();
             if (proj == null)
-                return "Project notfound in the database";
-            dataBase.Projects.Remove(proj);
-            await dataBase.SaveChangesAsync();
-            return "Success";
-        }
+            {
+                throw new Exception("Project Not found !!");
+            }
 
-        public async Task<string> UpdateProject(long IdProject, string Description)
+            dataBase.Projects.Remove(proj);
+            dataBase.SaveChanges();
+            return proj;
+        } 
+
+        public Project UpdateProject(long IdProject, string Description)
         {
             // proj = await dataBase.Projects.FirstOrDefaultAsync(p => p.IdProject == IdProject);
-            var proj = await dataBase.Projects.FindAsync(IdProject);
+            var proj = dataBase.Projects.Where(p => p.IdProject == IdProject).FirstOrDefault() ;
             if (proj == null)
-                return "Project notfound in the database";
+            {
+                throw new Exception("Project Not found !!");
+            }
             proj.Description = Description;
-            await dataBase.SaveChangesAsync();
-            return "Success";
+            
+            dataBase.Update(proj);
+            dataBase.SaveChanges();
+            return proj;
 
 
-        }*/
+        }
     }
 }

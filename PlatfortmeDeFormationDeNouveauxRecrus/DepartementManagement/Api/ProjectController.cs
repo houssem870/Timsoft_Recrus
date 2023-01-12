@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Services;
+using System.Reflection.Metadata.Ecma335;
 
 namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Api
 {
@@ -20,6 +21,23 @@ namespace PlatfortmeDeFormationDeNouveauxRecrus.DepartementManagement.Api
         public IActionResult AddProject([FromBody] string Description)
         {
             return Ok(projectService.AddProject(Description));
+        }
+        [HttpPut]
+        [Route("UpdateProject")]
+        public IActionResult UpdateProject(
+            [FromBody]
+            long IdProject,
+            string Description)
+        {
+            return Ok(projectService.UpdateProject(IdProject, Description));  
+        }
+        [HttpDelete]
+        [Route("RemoveProject")]
+        public IActionResult RemoveProject(
+            [FromBody]
+            long IdProject)
+        {
+            return Ok(projectService.RemoveProject(IdProject));
         }
 
     }
