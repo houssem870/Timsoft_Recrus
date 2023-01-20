@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\TahaYassineLAABIDI\\source\\repos\\Timsoft_Recrus\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TahaYassineLAABIDI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\HP\\Desktop\\pfeTimSoft\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\HP\\Desktop\\pfeTimSoft\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\pfeTimSoft\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus.csproj",
+        "projectName": "PlatfortmeDeFormationDeNouveauxRecrus",
+        "projectPath": "C:\\Users\\HP\\Desktop\\pfeTimSoft\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\pfeTimSoft\\PlatfortmeDeFormationDeNouveauxRecrus\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> cfed546d6732583611fc83f5d5de0452acf9655d
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,8 +104,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -100,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.113\\RuntimeIdentifierGraph.json"
         }
       }
     }
