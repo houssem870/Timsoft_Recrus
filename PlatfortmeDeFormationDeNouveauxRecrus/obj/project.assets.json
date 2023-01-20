@@ -2839,19 +2839,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HoussemABASSI\\.nuget\\packages\\": {}
+    "C:\\Users\\TahaYassineLAABIDI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HoussemABASSI\\OneDrive - Timsoft Group\\Bureau\\WebApp\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus.csproj",
+      "projectUniqueName": "C:\\Users\\TahaYassineLAABIDI\\Source\\Repos\\Timsoft_Recrus\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus.csproj",
       "projectName": "PlatfortmeDeFormationDeNouveauxRecrus",
-      "projectPath": "C:\\Users\\HoussemABASSI\\OneDrive - Timsoft Group\\Bureau\\WebApp\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus.csproj",
-      "packagesPath": "C:\\Users\\HoussemABASSI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HoussemABASSI\\OneDrive - Timsoft Group\\Bureau\\WebApp\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus\\obj\\",
+      "projectPath": "C:\\Users\\TahaYassineLAABIDI\\Source\\Repos\\Timsoft_Recrus\\PlatfortmeDeFormationDeNouveauxRecrus\\PlatfortmeDeFormationDeNouveauxRecrus.csproj",
+      "packagesPath": "C:\\Users\\TahaYassineLAABIDI\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TahaYassineLAABIDI\\Source\\Repos\\Timsoft_Recrus\\PlatfortmeDeFormationDeNouveauxRecrus\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HoussemABASSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TahaYassineLAABIDI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
